@@ -19,26 +19,26 @@ pipeline{
                 run_api_tests("dev")
             }
         }
-         stage('deploy-stg') {
-            steps {
-                deploy("stg")
-            }
-        }
-         stage('test-stg') {
-            steps {
-                run_api_tests("stg")
-            }
-        }
-         stage('deploy-prod') {
-            steps {
-                deploy("prod")
-            }
-        }
-         stage('test-prod') {
-            steps {
-                run_api_tests("prod")
-            }
-        }
+        //  stage('deploy-stg') {
+        //     steps {
+        //         deploy("stg")
+        //     }
+        // }
+        //  stage('test-stg') {
+        //     steps {
+        //         run_api_tests("stg")
+        //     }
+        // }
+        //  stage('deploy-prod') {
+        //     steps {
+        //         deploy("prod")
+        //     }
+        // }
+        //  stage('test-prod') {
+        //     steps {
+        //         run_api_tests("prod")
+        //     }
+        // }
         
     }
 

@@ -4,7 +4,7 @@ services:
     image: lynnmal/python-greetings-app:latest
     container_name: greetings-app-dev
     ports:
-      - 7001:3000
+      - 3000:7001
   greetings-app-stg:
     build: .
     image: lynnmal/python-greetings-app:latest

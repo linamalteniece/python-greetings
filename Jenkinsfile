@@ -23,7 +23,7 @@ def build_docker_image(){
     sh "docker build -t lynnmal/api-tests:latest ."
 
     echo "Pushing image to a docker registry."
-    sh "docker push lynnmal/api-tests:latest ."
+    sh "docker push lynnmal/api-tests:latest"
 }
 
 def deploy(String environment){

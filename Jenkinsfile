@@ -14,6 +14,17 @@ pipeline{
                 deploy("dev")
             }
         }
+         stage('deploy-stg') {
+            steps {
+                deploy("stg")
+            }
+        }
+         stage('deploy-prod') {
+            steps {
+                deploy("prod")
+            }
+        }
+        
     }
 
 }

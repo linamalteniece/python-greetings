@@ -14,14 +14,29 @@ pipeline{
                 deploy("dev")
             }
         }
+         stage('test-dev') {
+            steps {
+                run_api_tests("dev")
+            }
+        }
          stage('deploy-stg') {
             steps {
                 deploy("stg")
             }
         }
+         stage('test-stg') {
+            steps {
+                run_api_tests("stg")
+            }
+        }
          stage('deploy-prod') {
             steps {
                 deploy("prod")
+            }
+        }
+         stage('test-prod') {
+            steps {
+                run_api_tests("prod")
             }
         }
         
@@ -51,4 +66,12 @@ def deploy(String environment){
 
     echo "Creating a new Application container."
     sh "docker compose up -d greetings-app-${environment}"
+}
+
+def run_api_tests(String environment){
+     echo "API Tests triggered on ${environment} env."
+
+     echo "Pulling latest api-tests Image from Docker Hub."
+     sh "docker pull lynnmal/js-api-tests"
+     sh "docker run --network=host --rm lynnmal/api-tests:latest run greetings greetings-${environment}"
 }

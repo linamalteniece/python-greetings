@@ -33,11 +33,11 @@ def deploy(String environment){
     sh "docker pull lynnmal/python-greetings-app:latest"
 
     echo "Stopping previous Application service."
-    sh "docker compose stop python-greetings-app-${environment}"
+    sh "docker compose stop greetings-app-${environment}"
 
     echo "Removing prevoius Application container."
-    sh "docker compose rm python-greetings-app-${environment}"
+    sh "docker compose rm greetings-app-${environment}"
 
     echo "Creating a new Application container."
-    sh "docker compose up -d python-greetings-app-${environment}"
+    sh "docker compose up -d greetings-app-${environment}"
 }

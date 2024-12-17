@@ -28,8 +28,8 @@ def build_docker_image(){
 
 def deploy(String environment){
     echo "Deployment triggered on ${environment} env."
-    String lowercaseEnv  = environment.toLowerCase()
-    sh "docker compose stop sample-book-app-${lowercaseEnv}"
-    sh "docker compose rm sample-book-app-${lowercaseEnv}"
-    sh "docker compose up -d sample-book-app-${lowercaseEnv}"
+    // String lowercaseEnv  = environment.toLowerCase()
+    sh "docker compose stop api-tests-${environment}"
+    sh "docker compose rm api-tests-${environment}"
+    sh "docker compose up -d api-tests-${environment}"
 }

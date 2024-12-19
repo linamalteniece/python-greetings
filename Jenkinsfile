@@ -75,5 +75,5 @@ def run_api_tests(String environment){
      sh "docker pull lynnmal/api-tests"
 
      echo "Running container which is going to execute tests."
-     sh "docker run --network=host --rm lynnmal/api-tests run greetings greetings_${environment}"
+     sh "docker run --network=host --rm lynnmal/api-tests:latest run greetings greetings_${environment}"
 }

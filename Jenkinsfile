@@ -39,9 +39,7 @@ pipeline{
                 run_api_tests("prod")
             }
         }
-        
     }
-
 }
 
 def build_docker_image(){
